@@ -1,0 +1,40 @@
+server:
+  address: localhost
+  port: 8088
+  servlet:
+    context-path: /
+
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/sb_users
+    username: leadspringboot
+    password: 123456
+    initialize: true
+    initialization-mode: always
+    sql-script-encoding: UTF-8
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+      force-request: true
+      force-response: true
+
+  main:
+    banner-mode: off
+
+logging:
+  file: logs/application-debug.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org:
+      springframework: DEBUG
+    root: DEBUG
+
